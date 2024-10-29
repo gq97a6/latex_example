@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{blindtext}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tabularray}
+\usepackage{makecell}
+\usepackage{ifthen}
+\usepackage{courier} %Set font for the entire document
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[yyyymmdd]{datetime}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[margin=2.5cm, includefoot]{geometry}
+\usepackage{transparent}
+
+%Change title styles
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}
+{\normalfont\Large\bfseries}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}
+{\normalfont\Large\bfseries}{\thesubsubsection.}{0.5em}{}
+
+% Set font family for the entire document
+\renewcommand{\familydefault}{\ttdefault}
+
+%Set section depth for paragraphs
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+%Set color scheme
+\pagecolor{black}
+\color{white}
+
+%Remove indent for new paragraphs
+\setlength{\parindent}{0pt}
+
+%Set title
+\title{Praca dyplomowa}
+\author{\Huge Adam Kowalski}
+\date{\today}
+
+%Set date separator
+\renewcommand{\dateseparator}{.}
+
+%Set header/footer style
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyfoot[R]{\small \nouppercase{\leftmark{}}}
+\fancyfoot[C]{\small Strona~\thepage\hspace{1pt}~z~\pageref{LastPage}}
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
+%Set images folder
+\graphicspath{ {./images/} }
+
+%Set toc style
+\renewcommand{\contentsname}{Spis treści}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsubsubsecaftersnum}{.}
+\setlength{\cftsecnumwidth}{1.5em}
+\setlength{\cftsubsecnumwidth}{2.5em}
+\setlength{\cftsubsubsecnumwidth}{3.5em}
+\setlength{\cftbeforesecskip}{1em}
+\setlength{\cftbeforesubsecskip}{0.2em}
+\setlength{\cftbeforesubsubsecskip}{0.2em}
+
+%Fix text overflow
+\setlength{\emergencystretch}{3em} % Allows for additional line stretching
+\tolerance=1000 % Adjusts how much white space LaTeX can insert between words
+\hyphenpenalty=50 % Makes hyphenation more likely to prevent overflow
+
+%Silence warnings
+\hbadness=10000
+
+\begin{document} % ------------------------------------------------------------------
+\include{includes/0.0-tytulowa.tex}
+\newpage
+
+\include{includes/0.1-karta_projektu}
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+\newpage
+
+\include{includes/1-faza_projektowania} %Przykład tworzenia tabel
+
+\include{includes/2-bibliografia} %Przykład bibliografi
+\newpage
+
+\end{document}  % --------------------------------------------------------------------

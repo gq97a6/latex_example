@@ -1,0 +1,181 @@
+\newcommand{\wymaganie}[8]{
+    \begin{center}
+        \scriptsize
+        \begin{tabularx}{1\textwidth} {
+                | >{\hsize=0.15\hsize}X
+                | >{\hsize=0.85\hsize}X |}
+            \Xhline{0.5em}
+
+            \multicolumn{2}{|l|}{
+                \parbox[c][1.5em][c]{0.5\textwidth}{
+                    KARTA WYMAGANIA
+                }
+            }
+            \\
+            \hline
+
+            \parbox[c][2em][c]{\textwidth}{
+                \textbf{Identyfikator}
+            } &
+            \parbox[c][2em][c]{\textwidth}{
+                #1
+            }
+            \\
+            \hline
+
+            \parbox[c][2em][c]{\textwidth}{
+                \textbf{Priorytet}
+            } &
+            \parbox[c][2em][c]{\textwidth}{
+                #2
+            }
+            \\
+            \hline
+
+            \parbox[c][2em][c]{\textwidth}{
+                \textbf{Nazwa}
+            } &
+            \parbox[c][2em][c]{\textwidth}{
+                #3
+            }
+            \\
+            \hline
+
+            %-------------------------------------
+            \ifthenelse{\equal{#4}{}}{}{
+                \parbox[c][2em][c]{\textwidth}{
+                    \textbf{Powiązane}
+            } &
+                \parbox[c][2em][c]{\textwidth}{
+                    #4
+                }
+            \\
+                \hline
+            }
+            %-------------------------------------
+            \parbox[c][#5][c]{\textwidth}{
+                \textbf{Opis}
+            } &
+            \parbox[c][#5][c]{\textwidth}{
+                #6
+            }
+            \\
+            \hline
+            %-------------------------------------
+            \parbox[c][#7][c]{\textwidth}{
+                \textbf{Uwagi}
+            } &
+            \parbox[c][#7][c]{\textwidth}{
+                #8
+            }
+            \\
+            \hline
+            %-------------------------------------
+        \end{tabularx}
+    \end{center}
+}
+
+\section{Faza projektowania}
+
+\subsection{Wymagania jakościowe}
+
+\subsubsection{Estetyka}
+
+\begin{itemize}[leftmargin=*]
+    \item Lorem ipsum dolor sit amet
+    \item Lorem ipsum dolor sit amet
+    \item Lorem ipsum dolor sit amet
+\end{itemize}
+
+\subsubsection{Przejrzystość}
+
+\begin{itemize}[leftmargin=*]
+    \item Lorem ipsum dolor sit amet
+    \item Lorem ipsum dolor sit amet
+    \item Lorem ipsum dolor sit amet
+\end{itemize}
+
+\subsubsection{Użyteczność}
+
+\begin{itemize}[leftmargin=*]
+    \item Lorem ipsum dolor sit amet
+    \item Lorem ipsum dolor sit amet
+    \item Lorem ipsum dolor sit amet
+\end{itemize}
+
+\newpage
+
+\subsection{Wymagania niefunkcjonalne}
+
+\wymaganie{NF3322}{MUST}{Kompatybilność z systemem Andrioid}{}
+{2em}{ % Definiuje wysokość sekcji Opis
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+}
+{2em}{ % Definiuje wysokość sekcji Uwagi
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+}
+
+\wymaganie{NF8047}{MUST}{Kompatybilność z platformą Google Play}{}
+{2em}{
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+}
+{2em}{
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+}
+
+\newpage
+
+\subsection{Wykorzystane technologie}
+
+\begin{center}
+    \begin{tabularx}{1\textwidth} {
+            | >{\hsize=0.25\hsize}X
+            | >{\hsize=0.75\hsize}X |}
+        \hline
+
+        \parbox[c][1em][c]{\textwidth}{
+            \textbf{Technologia}
+        } &
+        \parbox[c][2.5em][c]{\textwidth}{
+            \textbf{Zastosowanie}
+        }
+        \\
+        \hline
+
+        \parbox[c][1em][c]{\textwidth}{
+            Kotlin
+        } &
+        \parbox[c][2.5em][c]{\textwidth}{
+            Język programowania
+        }
+        \\
+        \hline
+
+        \parbox[c][1em][c]{\textwidth}{
+            Jetpack Compose
+        } &
+        \parbox[c][2.5em][c]{\textwidth}{
+            Interfejs graficzny
+        }
+        \\
+        \hline
+
+        \parbox[c][1em][c]{\textwidth}{
+            Gradle
+        } &
+        \parbox[c][2.5em][c]{\textwidth}{
+            Narzędzie automatyzacji kompilacji projektu
+        }
+        \\
+        \hline
+
+        \parbox[c][1em][c]{\textwidth}{
+            Git
+        } &
+        \parbox[c][2.5em][c]{\textwidth}{
+            Śledzenie zmian w projekcie
+        }
+        \\
+        \hline
+    \end{tabularx}
+\end{center}
