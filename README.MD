@@ -47,6 +47,9 @@ Możesz też skonfigurować własne środowisko. Do tego przyda się:
 - kompilator
 - automatyczne ściąga includowane biblioteki
 
+3. `Perl`: https://strawberryperl.com/
+- używany przez MikTex
+
 ### Dodatkowe informacje
 - Po kompilacji generowane jest wiele plików, są one zbędne wiec nie warto ich dodawać do repozytorium.
 - Pracę można podzielić na odzielne pliki/rozdziały i potem je importować do głównego pliku.
