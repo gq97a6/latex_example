@@ -1,0 +1,49 @@
+%Define the theme variable
+\newif\ifdarktheme
+\darkthemetrue % Change to \darkthemetrue for dark theme
+
+%Set color scheme based on the theme variable
+\ifdarktheme
+  \pagecolor{black}
+  \graphicspath{ {./images/white} }
+  \color{white}
+  \definecolor{coltextgray}{rgb}{1, 1, 1}
+  \tcbset{on line, arc=0.4mm, boxsep=0pt, left=1pt, right=1pt, top=1pt, bottom=1pt, coltext=coltextgray, colframe=darkgray, colback=darkgray, opacityback=0.3}
+\else
+  \pagecolor{white}
+  \graphicspath{ {./images/black} }
+  \color{black}
+  \definecolor{colbackgray}{rgb}{0.8, 0.8, 0.8}
+  \tcbset{on line, arc=0.4mm, boxsep=0pt, left=1pt, right=1pt, top=1pt, bottom=1pt, coltext=black, colframe=lightgray, colback=colbackgray, opacityback=0.3}
+\fi
+
+\definecolor{darkcomment}{rgb}{0.65, 0.65, 0.65}
+\definecolor{lightcomment}{rgb}{0.4, 0.4, 0.4}
+\definecolor{lightbackground}{rgb}{0.96, 0.96, 0.96}
+\definecolor{darkbackground}{rgb}{0.08, 0.08, 0.08}
+
+%Code color syntax highlighting
+\lstdefinelanguage{Kotlin}{
+  xleftmargin=1em,
+  framexleftmargin=1em,
+  framextopmargin=0.5em,
+  framexbottommargin=0.5em,
+  frame=tb,
+  framerule=0em,
+  backgroundcolor=\ifdarktheme \color{darkbackground} \else \color{lightbackground} \fi,
+  comment=[l]{//},
+  commentstyle={\ifdarktheme \color{darkcomment} \else \color{lightcomment} \fi \ttfamily},
+  emph={filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println},
+  emphstyle={\color{OrangeRed}},
+  identifierstyle=\ifdarktheme \color{white} \else \color{black} \fi,
+  keywords={redacted, !in, !is, abstract, actual, annotation, as, as?, break, by, catch, class, companion, const, constructor, continue, crossinline, data, delegate, do, dynamic, else, enum, expect, external, false, field, file, final, finally, for, fun, get, if, import, in, infix, init, inline, inner, interface, internal, is, lateinit, noinline, null, object, open, operator, out, override, package, param, private, property, protected, public, receiveris, reified, return, return@, sealed, set, setparam, super, suspend, tailrec, this, throw, true, try, typealias, typeof, val, var, vararg, when, where, while},
+  keywordstyle={\ifdarktheme \color{Cerulean}\bfseries \else \color{Blue}\bfseries \fi},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  morestring=[s]{"""*}{*"""},
+  ndkeywords={@Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, Array, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String, Any, Unit, Nothing},
+  ndkeywordstyle={\color{BurntOrange}\bfseries},
+  sensitive=true,
+  stringstyle={\ifdarktheme \color{LimeGreen}\ttfamily \else \color{ForestGreen}\ttfamily \fi},
+  basicstyle=\small\ttfamily
+}

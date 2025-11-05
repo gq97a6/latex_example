@@ -1,0 +1,69 @@
+\section{Przykłady}
+
+\textbf{Jak załączyć snippet kodu?}
+\begin{lstlisting}[language=Kotlin]
+open fun testFunction() {
+    isEnabled = true
+}
+\end{lstlisting}
+
+\vspace{3em}
+
+\textbf{Jak dodać odnośnik do innej części dokumentu?}\\
+Patrz dział \hyperlink{targetName}{bibliografii}.
+\hypertarget{targetName}{}
+
+\vspace{3em}
+
+\textbf{Jak dodać cytat z bibliografii?}\\
+Często korzystam z wyszukiwarki. (google - \cite{google})
+
+\vspace{3em}
+
+\textbf{Jak oznaczyć tekst?}\\
+\tcbox{topic}
+
+\vspace{3em}
+
+\textbf{Jak dodać odstęp?}\\
+
+Ho
+\hspace{3em}
+ryzontalny
+
+Wer\\
+\vspace{3em}\\
+tykalny
+
+\vspace{3em}
+
+\textbf{Jak działy?}\\
+
+\section{Dział}
+\subsection{Poddział}
+\subsubsection{Podpoddział}
+
+\newpage
+
+\textbf{Jak dodać rysunek i referencję do niego?}\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1.005]{pjatk}
+    \caption{Logo uczelni}
+    \label{fig:customLabel}
+\end{figure}
+
+Na rysunku \ref{fig:customLabel} przedstawiono monochromatyczne logo uczelni.
+
+\vspace{3em}
+
+\textbf{Jak dodać obraz szerokości połowy strony z predefiniowanego katalogu?}\\
+\vspace{1em}
+\includegraphics[width=0.5\textwidth]{pjatk}
+
+\vspace{3em}
+
+\textbf{Jak dodać obraz o określonej szerokości z dowolnego katalogu?}\\
+\vspace{1em}
+\includegraphics[width=20em]{./images/white/pjatk.png}

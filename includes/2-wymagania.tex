@@ -1,0 +1,194 @@
+\newcommand{\wymaganie}[8]{
+    \begin{center}
+        \footnotesize
+        \begin{tabularx}{1\textwidth} {
+                | >{\hsize=0.15\hsize}X
+                | >{\hsize=0.85\hsize}X |}
+            \Xhline{0.5em}
+
+            \multicolumn{2}{|l|}{
+                \parbox[c][1.5em][c]{0.5\textwidth}{
+                    KARTA WYMAGANIA
+                }
+            }
+            \\
+            \hline
+
+            \parbox[c][2em][c]{\textwidth}{
+                \textbf{Identyfikator}
+            } &
+            \parbox[c][2em][c]{\textwidth}{
+                #1
+            }
+            \\
+            \hline
+
+            \parbox[c][2em][c]{\textwidth}{
+                \textbf{Priorytet}
+            } &
+            \parbox[c][2em][c]{\textwidth}{
+                #2
+            }
+            \\
+            \hline
+
+            \parbox[c][2em][c]{\textwidth}{
+                \textbf{Nazwa}
+            } &
+            \parbox[c][2em][c]{\textwidth}{
+                #3
+            }
+            \\
+            \hline
+
+            %-------------------------------------
+            \ifthenelse{\equal{#4}{}}{}{
+                \parbox[c][2em][c]{\textwidth}{
+                    \textbf{Powiązane}
+            } &
+                \parbox[c][2em][c]{\textwidth}{
+                    #4
+                }
+            \\
+                \hline
+            }
+            %-------------------------------------
+            \parbox[c][#5][c]{\textwidth}{
+                \textbf{Opis}
+            } &
+            \parbox[c][#5][c]{\textwidth}{
+                #6
+            }
+            \\
+            \hline
+            %-------------------------------------
+            \parbox[c][#7][c]{\textwidth}{
+                \textbf{Uwagi}
+            } &
+            \parbox[c][#7][c]{\textwidth}{
+                #8
+            }
+            \\
+            \hline
+            %-------------------------------------
+        \end{tabularx}
+    \end{center}
+}
+
+\newcommand{\tabeladwiekolumnywiersz}[2]{
+    \parbox[c][1em][c]{\textwidth}{
+        #1
+    } &
+    \parbox[c][2.5em][c]{\textwidth}{
+        #2
+    }
+    \\
+    \hline
+}
+
+\newcommand{\tabeladwiekolumny}[3]{
+    \begin{center}
+        \begin{tabularx}{1\textwidth} {
+                | >{\hsize=#1\hsize}X
+                | >{\hsize=#2\hsize}X |}
+            \hline
+
+            #3
+        \end{tabularx}
+    \end{center}
+}
+
+\section{Faza projektowania}
+Ten dział pracy poświęcony został opisowi wymagań jakie miał spełniać gotowy produkt. Wymagania te zostały podzielone na trzy kategorie: jakościowe, niefunkcjonalne oraz funkcjonalne. Wymagania jakościowe opisują oczekiwania co do wyglądu oraz interakcji z aplikacją. Wymagania niefunkcjonalne opisują oczekiwania co do jakości i struktury kodu oraz rodzaju stosowanych rozwiązań w projekcie. Wymagania funkcjonalne opisują funkcje jakie projekt ma posiadać.\\
+
+Poniżej znajduje się przykład karty wymagania z opisem poszczególnych pól.
+
+\wymaganie
+{Unikalny identyfikator wymagania}
+{Priorytet wymagania według metodyki MoSCoW}
+{Nazwa wymagania}
+{Opcjonalna lista identyfikatorów wymagań powiązanych}
+{2em}{
+    Krótki opis przedstawiający wymaganie
+}
+{6em}{
+    Opcjonalne dodatkowe uwagi dotyczące wymagania.\\
+    Mają za zadanie uściślić opis wymagania, jeżeli zachodzi taka potrzeba.\\
+    W przypadku braku wymogu dodatkowych informacji, pole to pozostaje puste.\\
+    Nie obejmują informacji, które są powszechnie znane, domyślne lub standardowe.
+}
+
+\newpage
+
+\subsection{Wymagania ogólne}
+
+\wymaganie{NF3322}{MUST}{Lorem ipsum dolor sit amet, consectetur}{}
+{2em}{
+    Lorem ipsum dolor sit amet, consectetur
+}
+{2em}{
+    Lorem ipsum dolor sit amet, consectetur
+}
+
+\newpage
+
+\subsection{Wymagania jakościowe}
+
+\begin{itemize}[leftmargin=*]
+    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+\end{itemize}
+
+\newpage
+
+\subsection{Wymagania niefunkcjonalne}
+
+\wymaganie{NF3322}{MUST}{Lorem ipsum dolor sit amet, consectetur}{}
+{2em}{
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+}
+{2em}{
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+}
+
+\newpage
+
+\subsection{Wymagania funkcjonalne}{}
+
+\wymaganie{F1733}{MUST}{Lorem ipsum dolor sit amet, consectetur}{F2678 | F6487 | F3297 | F8612}
+{2em}{
+    Lorem ipsum dolor sit amet
+}
+{2em}{-}
+
+\newpage
+
+\subsection{Wykorzystane technologie}
+
+\tabeladwiekolumny{0.35}{0.65} {
+    \tabeladwiekolumnywiersz
+    {\textbf{Technologia}}
+    {\textbf{Zastosowanie}}
+
+    \tabeladwiekolumnywiersz
+    {Lorem \cite{insta}}
+    {Lorem ipsum dolor}
+
+    \tabeladwiekolumnywiersz
+    {Lorem ipsum \cite{google}}
+    {Lorem ipsum dolor}
+
+    \tabeladwiekolumnywiersz
+    {Lorem ipsum \cite{chat}}
+    {Lorem ipsum dolor sit amet}
+}
+
+\newpage
+
+\subsection{Metodyka pracy}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\\
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\\

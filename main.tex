@@ -1,0 +1,215 @@
+\documentclass[10pt]{book}
+
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{blindtext}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{silence}
+\usepackage{tabularray}
+\usepackage{makecell}
+\usepackage{ifthen}
+\usepackage{transparent}
+\usepackage{csquotes}
+\usepackage{calc}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{varwidth}
+\usepackage[most]{tcolorbox}
+\usepackage[yyyymmdd]{datetime}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[margin=2cm, includefoot, bindingoffset=10mm]{geometry}
+\usepackage[backend=biber,style=numeric,sorting=nty]{biblatex}
+
+%Set font
+\usepackage[polish]{babel}
+\usepackage{fontspec}
+\setmainfont{Courier New}
+
+\include{theme.tex}
+
+%Add and customize bibliography
+\addbibresource{bibliography.bib}
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat{url}{#1}
+\DeclareFieldFormat{labelnumber}{#1}
+\DeclareBibliographyDriver{source}{%Required comment for some reason
+  \small
+  \printfield{title}\\
+  %\texttransparent{0.6}{dostęp: \printfield{year}}\\
+  \texttransparent{0.6}{\printfield{url}}
+}
+
+%Setup figure captions
+\captionsetup[figure]{labelfont={bf}, name={Rys.}, labelsep=period}
+
+%Disable new page for chapters
+\gdef\clearforchapter{}
+\gdef\cleardoublepage{}
+
+%Change title styles
+\titleformat{\section}
+{\normalfont\LARGE\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}
+{\normalfont\Large\bfseries}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}{\thesubsubsection.}{0.5em}{}
+
+% Set font family for the entire document
+%\renewcommand{\familydefault}{\ttdefault}
+
+%Set section depth for paragraphs
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+%Remove indent for new paragraphs
+\setlength{\parindent}{0pt}
+
+%Set title
+\title{Praca dyplomowa}
+\author{\Huge Imię Nazwisko}
+\date{\today}
+
+%Set date separator
+\renewcommand{\dateseparator}{.}
+
+%Set header/footer style
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+
+% Remove footer if page number is less than 0
+\fancyfoot[C]{\ifthenelse{\value{page} < 1}{}{\small Strona~\thepage\hspace{1pt}~z~\pageref{LastPage}}}
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
+%Set toc style
+\renewcommand{\contentsname}{Spis treści}
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftdot}{\tiny\texttransparent{0.8}{.}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsubsubsecaftersnum}{.}
+\def\two@digits#1{\ifnum#1<10  0\fi\number#1}
+\renewcommand\thesection{\two@digits{\value{section}}}
+\cftsetindents{section}{1em}{2.3em}
+\cftsetindents{subsection}{3.5em}{3.5em}
+\cftsetindents{subsubsection}{7em}{4.7em}
+\setlength{\cftbeforesecskip}{0.12em}
+\setlength{\cftbeforesubsecskip}{0.12em}
+\setlength{\cftbeforesubsubsecskip}{0.12em}
+
+%Set list of figures style
+\renewcommand{\cftfigaftersnum}{.}
+\setlength{\cftbeforefigskip}{0.12em}
+
+%Setup hyperlinks
+\hypersetup{ linktoc=all, hidelinks }
+
+%Fix text overflow
+\setlength{\emergencystretch}{3em} % Allows for additional line stretching
+\tolerance=1000 % Adjusts how much white space LaTeX can insert between words
+\hyphenpenalty=50 % Makes hyphenation more likely to prevent overflow
+
+%Silence warnings
+\WarningFilter{latex}{Overfull \hbox}
+\hbadness=10000
+\hfuzz=1000em
+
+%Code polish letters
+\makeatletter
+\lst@InputCatcodes
+\def\lst@DefEC{%
+ \lst@CCECUse \lst@ProcessLetter
+  ^^80^^81^^82^^83^^84^^85^^86^^87^^88^^89^^8a^^8b^^8c^^8d^^8e^^8f%
+  ^^90^^91^^92^^93^^94^^95^^96^^97^^98^^99^^9a^^9b^^9c^^9d^^9e^^9f%
+  ^^a0^^a1^^a2^^a3^^a4^^a5^^a6^^a7^^a8^^a9^^aa^^ab^^ac^^ad^^ae^^af%
+  ^^b0^^b1^^b2^^b3^^b4^^b5^^b6^^b7^^b8^^b9^^ba^^bb^^bc^^bd^^be^^bf%
+  ^^c0^^c1^^c2^^c3^^c4^^c5^^c6^^c7^^c8^^c9^^ca^^cb^^cc^^cd^^ce^^cf%
+  ^^d0^^d1^^d2^^d3^^d4^^d5^^d6^^d7^^d8^^d9^^da^^db^^dc^^dd^^de^^df%
+  ^^e0^^e1^^e2^^e3^^e4^^e5^^e6^^e7^^e8^^e9^^ea^^eb^^ec^^ed^^ee^^ef%
+  ^^f0^^f1^^f2^^f3^^f4^^f5^^f6^^f7^^f8^^f9^^fa^^fb^^fc^^fd^^fe^^ff%
+żłćęśąźń%
+  ^^00}
+\lst@RestoreCatcodes
+\makeatother
+
+\newcommand{\screenShotTwo}[3]{
+  \begin{minipage}{0.48\textwidth}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=1\textwidth]{./images/ss/#1.jpg}
+          \caption{#3}
+          \label{#2}
+      \end{figure}
+  \end{minipage}
+}
+
+\newcommand{\screenShotThree}[3]{
+  \begin{minipage}{0.31\textwidth}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=1\textwidth]{./images/ss/#1.jpg}
+          \caption{#3}
+          \label{#2}
+      \end{figure}
+  \end{minipage}
+}
+
+\begin{document} % ------------------------------------------------------------------
+
+%Set default font size
+\normalsize
+
+\setcounter{page}{-101}
+
+\null
+\newpage
+
+\include{includes/0.0-tytulowa.tex}
+\newpage
+
+\include{includes/0.1-karta_projektu}
+\newpage
+
+\tocloftpagestyle{empty}
+\renewcommand{\contentsname}{\vspace{-2.5em}Spis treści}
+\renewcommand\listfigurename{\vspace{-2.5em}Spis rysunków}
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+
+\setcounter{page}{1}
+
+\include{includes/1-slownik_pojec}
+\newpage
+
+\include{includes/2-wymagania}
+\newpage
+
+\include{includes/3-przyklady}
+\newpage
+
+\include{includes/4-bibliografia}
+\newpage
+
+\include{includes/5-zalaczniki}
+\newpage
+
+\end{document}  % --------------------------------------------------------------------
